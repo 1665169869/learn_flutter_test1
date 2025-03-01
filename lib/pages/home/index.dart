@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:learn_flutter_test1/pages/home/tab_index/index.dart';
 import 'package:learn_flutter_test1/widgets/page_content.dart';
 
 List<Widget> tabviewList = [
-  PageContent(name: "首页"),
+  TabIndex(),
   PageContent(name: "搜索"),
   PageContent(name: "咨询"),
   PageContent(name: "我的"),
@@ -35,12 +36,18 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: tabviewList[_selectedIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _selectedIndex,
-        items: navBarItemList,
-        selectedItemColor: Colors.green,
-        type: BottomNavigationBarType.fixed,
-        onTap: _onItemTapped,
+      bottomNavigationBar: Theme(
+        data: ThemeData(
+          // 取消水波纹效果
+          splashColor: Colors.transparent,
+        ),
+        child: BottomNavigationBar(
+          currentIndex: _selectedIndex,
+          items: navBarItemList,
+          selectedItemColor: Colors.green,
+          type: BottomNavigationBarType.fixed,
+          onTap: _onItemTapped,
+        ),
       ),
     );
   }

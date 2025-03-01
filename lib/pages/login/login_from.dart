@@ -28,7 +28,7 @@ class _LoginFormState extends State<LoginForm> {
           obscureText: !_showPassword,
           suffixIcon: IconButton(
             onPressed: () => setState(() => _showPassword = !_showPassword),
-            icon: Icon(_showPassword ? Icons.visibility_off : Icons.visibility),
+            icon: Icon(_showPassword ? Icons.visibility : Icons.visibility_off),
           ),
         ),
         Padding(
@@ -42,7 +42,7 @@ class _LoginFormState extends State<LoginForm> {
 
         SignUpPrompt(),
       ],
-    );
+    );  
   }
 }
 

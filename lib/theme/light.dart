@@ -18,5 +18,6 @@ class LightTheme {
       ),
       suffixIconColor: Colors.green,
     ),
+    scaffoldBackgroundColor: Color.fromARGB(255, 245, 245, 245),
   );
 }
